@@ -2,33 +2,20 @@ package project1.demo.Project1;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name = "address")
+@Embeddable
 public class Address {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(nullable = false, unique = true, length = 45)
+    @Column(name =" District" , table = "address" , nullable = false, length = 45)
     private String District;
 
-    @Column(nullable = false, unique = true, length = 45)
+    @Column(name = "City" ,  table = "address" , nullable = false, length = 45)
     private String City;
 
-    @Column(nullable = false, unique = true, length = 45)
+    @Column(name = "String" , table = "address" ,  nullable = false, length = 45)
     private String State;
 
-    @Column(nullable = false, unique = true, length = 45)
+    @Column(name = "Pincode" ,  table = "address" , nullable = false, length = 45)
     private Long Pincode;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getDistrict() {
         return District;

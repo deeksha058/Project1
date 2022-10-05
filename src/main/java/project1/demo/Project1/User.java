@@ -6,6 +6,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "users")
+@SecondaryTable(name = "address", pkJoinColumns = @PrimaryKeyJoinColumn(name = "add_id"))
 public class User {
 
     @Id
@@ -24,6 +25,16 @@ public class User {
     @Column(name = "last_name",   length = 20)
     private String lastName;
 
+    @Embedded
+    private Address address;
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 
     public Long getId() {
         return id;
@@ -65,5 +76,4 @@ public class User {
         this.lastName = lastName;
     }
 
-    // getters and setters are not shown
 }
