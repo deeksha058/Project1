@@ -11,8 +11,8 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(nullable = false, unique = true, length = 45)           // using email as a primary key.......
+                                                                                     // using email as a primary key.......
+    @Column(nullable = false, unique = true, length = 45)                             // (because it is difficult to manage email as a primary key for bigger task)
     private String email;
 
     @Column(nullable = false, length = 64)
@@ -21,7 +21,7 @@ public class User {
     @Column(name = "first_name", nullable = false, length = 20)
     private String firstName;
 
-    @Column(name = "last_name", length = 20)                   // last name can be null
+    @Column(name = "last_name",   length = 20)                    // last name can be null  (task ...... done)
     private String lastName;
 
 

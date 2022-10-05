@@ -7,10 +7,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 public class AppController {
+
+//    @Autowired
+    private User user;
 
     @Autowired
     private UserRepository userRepository;
@@ -34,11 +38,20 @@ public class AppController {
         userRepository.save(user);
         return "registration_success";
     }
-
     @GetMapping("/users")
     public String listUsers(Model model) {
         List<User> listUsers = userRepository.findAll();
-        model.addAttribute("listUsers", listUsers);
+        List<User> listUser2 = new ArrayList<>();
+        for (User it: listUsers ){
+            System.out.println(it.getLastName());
+            if (!(it.getLastName().isEmpty())){
+                listUser2.add(it);
+            }
+        }
+        for (User it: listUser2){
+            System.out.println(it.getEmail()+" lastName "+it.getLastName()+" "+it.getFirstName()+" "+it.getPassword());
+        }
+        model.addAttribute("listUser2", listUser2);
 
         return "users";
     }
