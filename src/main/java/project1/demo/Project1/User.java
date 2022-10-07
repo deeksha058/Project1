@@ -25,16 +25,8 @@ public class User {
     @Column(name = "last_name",   length = 20)
     private String lastName;
 
-    @Embedded
-    private Address address;
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
+    @Column(nullable = false,  length = 20)
+    private String address;
 
     public Long getId() {
         return id;
@@ -76,4 +68,12 @@ public class User {
         this.lastName = lastName;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 }
+

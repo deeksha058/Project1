@@ -35,15 +35,40 @@
                       <input type="text" class="form-control" th:field="*{firstName}"  required minlength="2" maxlength="20"/>
                   </div>
               </div>
-<br>
+              <br>
               <div class = "form-group row">
                   <label class="col-form-label col-4">LastName</label>
                   <div class="col-8">
-                      <input type="text" class="form-control" th:field="*{lastName}"  />
-<!--                      required minlength="-1" maxlength="20"-->
+                      <input type="text" class="form-control" th:field="*{lastName}" required minlength="2" maxlength="20"/>
+                 </div>
+              </div>
+              <br>
+              <div class = "form-group row">
+                  <label class="col-form-label col-4">Address</label>
+                  <div class="col-8">
+                      <input type="text" class="form-control" th:field="*{address}" required minlength="2" maxlength="20"/>
                   </div>
               </div>
               <br>
+<!--              <div class = "form-group row">-->
+<!--                  <label class="col-form-label col-4">Address</label>-->
+<!--                  <label class="col-form-label col-4">District</label>-->
+<!--                  <div class="col-8">-->
+<!--                      <input type="text" class="form-control" th:field="*{district}"  />-->
+<!--                  </div>-->
+<!--                  <label class="col-form-label col-4">City</label>-->
+<!--                  <div class="col-8">-->
+<!--                      <input type="text" class="form-control" th:field="*{city}"  />-->
+<!--                  </div>-->
+<!--                  <label class="col-form-label col-4">State</label>-->
+<!--                  <div class="col-8">-->
+<!--                      <input type="text" class="form-control" th:field="*{state}"  />-->
+<!--                  </div>-->
+<!--                  <label class="col-form-label col-4">Pincode</label>-->
+<!--                  <div class="col-8">-->
+<!--                      <input type="number" class="form-control" th:field="*{pincode}"  />-->
+<!--                  </div>-->
+<!--              </div>-->
 
               <div>
                   <button type="submit" class="btn-btn-primary" >Sign Up</button>

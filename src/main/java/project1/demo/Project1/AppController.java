@@ -29,7 +29,6 @@ public class AppController {
         model.addAttribute("user", new User());
         return "signup_form";
     }
-
     @PostMapping("/processRegister")
     public String processRegistration(User user){
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
@@ -41,19 +40,8 @@ public class AppController {
     @GetMapping("/users")
     public String listUsers(Model model) {
         List<User> listUsers = userRepository.findAll();
-        List<User> listUser2 = new ArrayList<>();
-        for (User it: listUsers ){
-            System.out.println(it.getLastName());
-            if (!(it.getLastName().isEmpty())){
-                listUser2.add(it);
-            }
-        }
-        for (User it: listUser2){
-            System.out.println(it.getEmail()+" lastName "+it.getLastName()+" "+it.getFirstName()+" "+it.getPassword());
-        }
-        model.addAttribute("listUser2", listUser2);
 
+        model.addAttribute("listUsers", listUsers);
         return "users";
     }
-
 }
